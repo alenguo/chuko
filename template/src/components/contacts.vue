@@ -27,7 +27,7 @@
                     <span class="contacts-nav-path__back-text">返回上一级</span>
                     <span class="contacts-nav-path__gap">|</span>
                 </div>
-                <span class="nav-paths__link" @click="onTapNavPathItem(item.partyId)">{{navPaths[navPaths.length-1].partyName}}</span>
+                <span class="nav-paths__link" @click="onTapNavPathItem(navPaths[navPaths.length-1].partyId)">{{navPaths[navPaths.length-1].partyName}}</span>
             </div>
             <div v-if="pageReady" class="weui-cells weui-cells_after-title" :class="selectedUserList.length ? 'weui-cells_margin-bottom': ''">
                 <div class="contacts-scroll-view" :style="{height: scrollViewHeight}">
