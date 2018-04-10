@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <empty empty-logo="../../static/images/icon-blank.png" empty-wording="为空页面提示文字111"></empty>
+    <empty empty-logo="../images/icon-blank.png" empty-wording="为空页面提示文字111"></empty>
   </div>
 </template>
 
