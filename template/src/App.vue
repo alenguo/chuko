@@ -1,0 +1,165 @@
+<script>
+    export default {
+        created() {
+            // 调用API从本地缓存中获取数据
+            const logs = wx.getStorageSync('logs') || []
+            logs.unshift(Date.now())
+            wx.setStorageSync('logs', logs)
+            console.log('app created and cache logs by setStorageSync')
+        }
+    }
+</script>
+
+<style>
+    .container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 200rpx 0;
+        box-sizing: border-box;
+    }
+    /* weui 临时css 框架css接入后删除 TODO*/
+    .weui-cells {
+        font-size: 17px;
+        line-height: 1.41176471;
+        position: relative;
+        margin-top: 1.17647059em;
+        background-color: #fff;
+    }
+    .weui-cells:before {
+        top: 0;
+        /* border-top: 1rpx solid #d9d9d9; */
+    }
+    .weui-cells:after,
+    .weui-cells:before {
+        position: absolute;
+        right: 0;
+        left: 0;
+        height: 1px;
+        content: ' ';
+        color: #d9d9d9;
+    }
+    .weui-cells:after {
+        bottom: 0;
+        /* border-bottom: 1rpx solid #d9d9d9; */
+    }
+    .weui-cells__title {
+        font-size: 14px;
+        margin-top: .77em;
+        margin-bottom: .3em;
+        padding-right: 15px;
+        padding-left: 15px;
+        color: #999;
+    }
+    .weui-cells_after-title {
+        margin-top: 0;
+    }
+    .weui-cells__tips {
+        font-size: 14px;
+        margin-top: .3em;
+        padding-right: 15px;
+        padding-left: 15px;
+        color: #999;
+    }
+    .weui-cell {
+        position: relative;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        padding: 10px 15px;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        border-bottom: 1rpx solid #d9d9d9;
+    }
+    .weui-cell:before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        left: 15px;
+        height: 1px;
+        content: ' ';
+        color: #d9d9d9;
+        border-top: 1rpx solid #d9d9d9;
+    }
+    .weui-cell:first-child:before {
+        display: none;
+    }
+    .weui-cell_active {
+        background-color: #ececec;
+    }
+    .weui-cell_primary {
+        -webkit-box-align: start;
+        -webkit-align-items: flex-start;
+        align-items: flex-start;
+    }
+    .weui-cell__bd {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        flex: 1;
+    }
+    .weui-cell__ft {
+        text-align: right;
+        color: #999;
+    }
+    .weui-cell_access {
+        color: inherit;
+    }
+    .weui-cell__ft_in-access {
+        position: relative;
+        padding-right: 13px;
+    }
+    .weui-cell__ft_in-access:after {
+        position: relative;
+        position: absolute;
+        top: -2px;
+        top: 50%;
+        right: 2px;
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        margin-top: -4px;
+        content: ' ';
+        -webkit-transform: matrix(.71, .71, -.71, .71, 0, 0);
+        transform: matrix(.71, .71, -.71, .71, 0, 0);
+        border-width: 2px 2px 0 0;
+        border-style: solid;
+        border-color: #c8c8cd;
+    }
+    .weui-cell_link {
+        font-size: 14px;
+        ;
+        color: #586c94;
+    }
+    .weui-cell_link:active {
+        background-color: #ececec;
+    }
+    .weui-cell_link:first-child:before {
+        display: block;
+    }
+    .weui-icon-radio {
+        margin-right: 3.2px;
+        margin-left: 3.2px;
+    }
+    .weui-icon-checkbox_circle,
+    .weui-icon-checkbox_success {
+        margin-right: 4.6px;
+        margin-left: 4.6px;
+    }
+    .weui-check__label:active {
+        background-color: #ececec;
+    }
+    .weui-check {
+        position: absolute;
+        left: -9999px;
+    }
+    .weui-check__hd_in-checkbox {
+        padding-right: .35em;
+    }
+    .weui-cell__ft_in-radio {
+        padding-left: .35em;
+    }
+</style>

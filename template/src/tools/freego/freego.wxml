@@ -1,0 +1,14 @@
+<view class="freego">
+    <block wx:for="{{env}}" wx:for-index="idx" wx:for-item="item">
+        <view class="freego-item_env checked" wx:if="{{item.isChecked}}" bind:tap="onBindChangeEnv" data-text="{{item.text}}">
+            {{item.text}}
+        </view>
+        <view class="freego-item_env" wx:else bind:tap="onBindChangeEnv" data-text="{{item.text}}">
+            {{item.text}}
+        </view>
+    </block>
+
+</view>
+<view class="debug">
+    <checkbox checked="{{debug}}" data-check="{{debug}}" bindtap="onCheckboxChange"/> debug调试模式
+</view>
