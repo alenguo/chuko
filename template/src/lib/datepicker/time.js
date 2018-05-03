@@ -346,7 +346,7 @@ timeFormat = {
      * 去除节假日的工具函数 - 小时
      * @param startDate
      * @param endDate
-     * @returns {{weekday: *, weekend: *, weekdayHours: *, weekendHours: *}}
+     * @returns {weekday: *, weekend: *, weekdayHours: *, weekendHours: *}
      */
     getDiffHoursForHoliday: function (startDate, endDate) {
         startDate = new Date(startDate);
