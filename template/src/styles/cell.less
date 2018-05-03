@@ -1,0 +1,68 @@
+@import url("./vareribles.less");
+
+    .cell {
+        background:#fff;        
+        display: flex;
+        position: relative;
+        align-items: center;
+        padding:10px 15px;
+        font-size: 16px;       
+        overflow: hidden; 
+        &:before {
+            .setTopBorder(@cellSeperateLineColor);
+            left: 15px;
+        }
+        &:first-child {
+            &:before{
+                left:0;
+            }
+        }        
+        &:last-child {
+            &:after {
+                .setBottomBorder(@cellSeperateLineColor);
+                left: 0;
+            }
+        }
+    }
+    .cell__image{
+        margin-right:5px;
+    }
+    .cell__body{
+        flex:1;
+    }
+    .cell__foot{
+        text-align: right;
+        color: #808080;
+    }
+    .cell__title{
+        font-size: 16px;
+        line-height: 24px;
+    }    
+    .cell__avatar{
+        height:24px;
+        width:24px;
+        background-color: @colorBlue;
+    }
+    .cell_hover{
+        background-color:@cellHoveredBackgroundColor;
+    }
+    .cell_accessible{
+        .cell__foot{
+            padding-right:13px;
+            position: relative;
+            &:after{
+                content: " ";
+                .setArrow(right, 6px, #C8C8CD, 2px);
+                position: absolute;
+                top: 50%;
+                margin-top: -4px;
+                right: 2px;
+            }
+        }
+
+    }
+    .cell_no-icon{
+        .cell__image{
+            display: none;
+        }
+    }

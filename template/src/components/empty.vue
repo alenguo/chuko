@@ -13,7 +13,7 @@
         props: {
             emptyLogo: {
                 type: String,
-                default: '../images/icon-blank.png'
+                default: '/images/icon-blank.png'
             },
             emptyWording: {
                 type: String,

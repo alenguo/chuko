@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import App from './index'
+import App from './demo-cell'
 
 const app = new Vue(App)
 app.$mount()

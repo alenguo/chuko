@@ -1,0 +1,66 @@
+@import url("./colors.less");
+
+.grids {
+        background: @gridBackgroundColor;
+        margin-top: 15px;
+        margin-bottom:15px;
+    }
+    
+    .grids__head {
+        font-size: 14px;
+        line-height: 22px;
+        padding: 10px 15px;
+        position: relative;
+        &:before {
+            .setTopBorder(@gridSeperateLineColor);
+        }
+    }
+    
+    .grids__body {
+        position: relative;
+        overflow: hidden;
+        &:before {
+            .setTopBorder(@gridSeperateLineColor);
+        }
+        &:after {
+            .setBottomBorder(@gridSeperateLineColor);
+        }
+    }
+    
+    .grid {
+        width: 33.333%;
+        float: left;
+        text-align: center;
+        box-sizing: border-box;
+        padding: 20px 0;
+        font-size: 16px;
+        position: relative;
+        &:before {
+            .setRightBorder(@gridSeperateLineColor);
+        }
+        &:after {
+            .setBottomBorder(@gridSeperateLineColor);
+        }
+        &:nth-child(3n):before {
+            display: none;
+        }
+    }
+    
+    .grid_hover {
+        background-color: @gridHoveredBackgroundColor;
+    }
+    
+    .grid__icon {
+        width: 32px;
+        height: 32px;
+        display: inline-block;
+        vertical-align: top;
+        // background-color: #d8e7f5;
+        border-radius: 5px;
+    }
+    
+    .grid__title {
+        line-height: 18px;
+        font-size: 14px;
+        margin-top: 5px;
+    }

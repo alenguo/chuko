@@ -7,10 +7,10 @@
                 <label class="weui-cell weui-check__label contacts-cell__item" @click="onTapLabelItem(item, 'search')">
                     <input type="checkbox" class="contacts__user-list_checkbox" value="" :checked="item.checked"/>
                     <div class="weui-cell__hd weui-check__hd_in-checkbox">
-                        <img class="contacts-icon-checkbox icon-checkbox_circle" src="../images/icon-checkbox_circle.png" v-if="!item.checked"/>
-                        <img class="contacts-icon-checkbox icon-checkbox_success" src="../images/icon-checkbox_success.png" v-if="item.checked"/>
+                        <img class="contacts-icon-checkbox icon-checkbox_circle" src="/images/icon-checkbox_circle.png" v-if="!item.checked"/>
+                        <img class="contacts-icon-checkbox icon-checkbox_success" src="/images/icon-checkbox_success.png" v-if="item.checked"/>
                     </div>
-                    <img class="user-avatar" :src="item.head_url || '../images/default-avatar.png'"/>
+                    <img class="user-avatar" :src="item.head_url || '/images/default-avatar.png'"/>
                     <div class="weui-cell__bd">
                         <div class="contacts-name">{{item.name}}</div>
                         <div class="contacts-position">{{item.position}}</div>
@@ -23,11 +23,11 @@
         <div class="contacts__body">
             <div v-if="navPaths.length > 1" class="nav-paths">
                 <div class="contacts-nav-path__back" @click="onTapNavPathItem(navPaths[navPaths.length-2].partyId)" >
-                    <img class="contacts-nav-path__icon-forward" src="../images/icon-forward.png" />
+                    <img class="contacts-nav-path__icon-forward" src="/images/icon-forward.png" />
                     <span class="contacts-nav-path__back-text">返回上一级</span>
                     <span class="contacts-nav-path__gap">|</span>
                 </div>
-                <span class="nav-paths__link" v-html="navPaths[navPaths.length-1].partyName"></span>
+                <span class="nav-paths__link" @click="onTapNavPathItem(item.partyId)">{{navPaths[navPaths.length-1].partyName}}</span>
             </div>
             <div v-if="pageReady" class="weui-cells weui-cells_after-title" :class="selectedUserList.length ? 'weui-cells_margin-bottom': ''">
                 <div class="contacts-scroll-view" :style="{height: scrollViewHeight}">
@@ -35,10 +35,10 @@
                         <label class="weui-cell weui-check__label contacts-cell__item" @click="onTapLabelItem(item)">
                             <input type="checkbox" class="contacts__user-list_checkbox" value="" :checked="item.checked"/>
                             <div class="weui-cell__hd weui-check__hd_in-checkbox">
-                                <img class="contacts-icon-checkbox icon-checkbox_circle" src="../images/icon-checkbox_circle.png" v-if="!item.checked"/>
-                                <img class="contacts-icon-checkbox icon-checkbox_success" src="../images/icon-checkbox_success.png" v-if="item.checked"/>
+                                <img class="contacts-icon-checkbox icon-checkbox_circle" src="/images/icon-checkbox_circle.png" v-if="!item.checked"/>
+                                <img class="contacts-icon-checkbox icon-checkbox_success" src="/images/icon-checkbox_success.png" v-if="item.checked"/>
                             </div>
-                            <img class="user-avatar" :src="item.head_url || '../images/default-avatar.png'"/>
+                            <img class="user-avatar" :src="item.head_url || '/images/default-avatar.png'"/>
                             <div class="weui-cell__bd">
                                 <div class="contacts-name">{{item.name}}</div>
                                 <div class="contacts-position">{{item.position}}</div>
@@ -48,7 +48,7 @@
                     <div v-for="partyItem in partyList" :key="partyItem.id">
                         <div class="weui-cell weui-cell_access contacts-cell__item" hover-class="weui-cell_active" @click="onTapPartyItem(partyItem)">
                             <div class="weui-cell__hd">
-                                <img class="contacts-party-icon" src="../images/default-party.png" />
+                                <img class="contacts-party-icon" src="/images/default-party.png" />
                             </div>
                             <div class="weui-cell__bd">{{partyItem.partyName}}</div>
                             <div class="weui-cell__ft weui-cell__ft_in-access"></div>
@@ -57,13 +57,13 @@
                 </div>
             </div>
             <div v-if="!pageReady" class="wwui-empty">
-                <img class="wwui-empty__loading-icon" src="../images/icon-loading.gif" />
+                <img class="wwui-empty__loading-icon" src="/images/icon-loading.gif" />
                 <span class="wwui-empty__text">加载中</span>
             </div>
             <div v-if="selectedUserList.length" class="contacts__selects-user">
                 <scroll-view scroll-x class="contacts-scroll-view__select-user" style="width: 73%;white-space: nowrap; display: flex;" :scroll-left="scrollLeft">
                     <block v-for="item in selectedUserList" :key="item.id">
-                        <img class="user-avatar" :src="item.head_url || '../images/default-avatar-small.png'"  @click="onTapSelectItem(item)"/>
+                        <img class="user-avatar" :src="item.head_url || '/images/default-avatar-small.png'"  @click="onTapSelectItem(item)"/>
                     </block>
                 </scroll-view>
                 <div class="contacts__selects-button" @click="onTapSelectConfirm">
