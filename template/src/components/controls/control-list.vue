@@ -3,7 +3,7 @@
         <div class="control__list" v-for="(config , listIndex) in setValue" :key="config.id">
             <div class="control__list-header" >
                 <span class="header__action">删除</span>
-                <span class="header__title">{{title + '' + (listIndex+1)}}</span>
+                <span class="header__title">{{title + (listIndex+1)}}</span>
             </div>
             <div class="control__list-body">
                 <block v-for="(item , index) in config" :key="item.id">
